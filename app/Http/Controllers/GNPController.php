@@ -56,7 +56,7 @@ class GNPController extends Controller
 		 $nacimiento="19840101"; 
 		 $sexo="M";
 		  $edad="22"; 
-		 $clavePaquete="PRS0009361"; 
+		 $clavePaquete="PRS0009355"; 
 		 $poliza="Amplia";
 		try {
 			
