@@ -44,11 +44,24 @@ class GNPController extends Controller
  	public function prueba()
  	{
  		//return view('prueba');
- 		dd($this->getTiposVia());
- 		dd($this->modelos("Ford", "fiesta", "2015"));
+ 		/* dd($this->getTiposVia());
+		 dd($this->modelos("Ford", "fiesta", "2015")); */
+		 $cp ="56334" ;
+		  $fecha_inicio= "20210111";
+		  $fecha_fin = "20220111"; 
+		$modelo = "2015";
+		$armadora ="HO";
+		 $carroceria="06"; 
+		 $version="14"; 
+		 $nacimiento="19840101"; 
+		 $sexo=M;
+		  $edad="22"; 
+		 $clavePaquete="PRS0009361"; 
+		 $poliza="Amplia";
 		try {
 			
-			$this->curl->post("https://api.service.gnp.com.mx/autos/wsp/cotizador/cotizar", $this->getXMLCotizacion());
+			$this->curl->post("https://api.service.gnp.com.mx/autos/wsp/cotizador/cotizar", $this->getXMLCotizacion($cp, $fecha_inicio, $fecha_fin,  $modelo, $armadora,
+			$carroceria, $version, $nacimiento, $sexo, $edad, $clavePaquete, $poliza));
 	        //convert the XML result into array
 	        $array_data = json_decode(json_encode(simplexml_load_string($this->curl->response)), true);
 
