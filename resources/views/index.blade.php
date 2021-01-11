@@ -349,10 +349,10 @@
                 url: "{{ url('/api/marcas') }}",
                 type:"GET",
                 success: function(res){
-                    // console.log(res);
+                     console.log(res);
                     $('#marcasul').empty();
                     for (var i = 0; i < res.marcas.length; i++) {
-                        // console.log(res.marcas[i]);
+                         console.log(res.marcas[i]);
                         $('#marcasul').append(`<li id="3_${res.marcas[i]['cMarca']}" class="list-group-item text-center marca seleccionador" >${res.marcas[i]['cMarcaLarga']}</li>`)
                     }
                 }
