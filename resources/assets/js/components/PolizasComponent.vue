@@ -643,6 +643,7 @@
             },
             'desc_gnp': function(value) {
                 this.loader = true;
+                console.log('PRIMER PASO GNP');
                 this.sendCotizacionGNP(this.desc_gnp,this.tipo_poliza);
             },
             'tipo_poliza':function (newVal,oldVal) {
