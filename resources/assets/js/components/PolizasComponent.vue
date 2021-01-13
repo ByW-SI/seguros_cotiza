@@ -787,6 +787,7 @@
                      console.log('DESCRIPCIONES GNP', res);
                     this.descripciones_gnp = res.data.modelosGNP.ELEMENTOS;
                 }).catch(err=>{
+                     console.log("Error en GNP");
                     console.log(err);
                 })
 
