@@ -57,7 +57,7 @@
                                             <!-- TODAS LAS DESCRIPCIONES DE LAS ASEGURADORAS -->
                                             <tr>
                                                 <th scope="row" class="text-center">
-                                                    Descripción
+                                                    Descripción GNP
                                                 </th>
                                                 <td class="text-center" v-if="cliente.gnp">
                                                     <select class="form-control" v-model="desc_gnp">
