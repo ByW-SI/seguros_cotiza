@@ -68,7 +68,7 @@ class GNPController extends Controller
 			$prueba =  json_encode($modelos);
 			
 	        print_r('<pre>');
-	        print_r($prueba.ELEMENTO[4].VALOR);
+	        print_r($prueba);
 	        print_r('</pre>');
 
 		} catch (Exception $e) {
