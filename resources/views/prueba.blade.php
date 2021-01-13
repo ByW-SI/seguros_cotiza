@@ -5,7 +5,8 @@
 </form>
 
 <div >
-	<example-component></example-component>
+	<h2>Hola estas son la spruebas</h2>
+	<example> </example>
 </div>
 
 @endsection
