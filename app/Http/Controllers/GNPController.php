@@ -60,20 +60,20 @@ class GNPController extends Controller
 		 $poliza="Amplia";
 		try {
 			$modelos    = $this->getModelos($modelo, $armadora, $carroceria);
- 		return response()->json(['modelosGNP'=>$modelos],201);
+ 		/* return response()->json(['modelosGNP'=>$modelos],201); */
 		/* 	$this->curl->post("https://api.service.gnp.com.mx/autos/wsp/cotizador/cotizar", $this->getXMLCotizacion($cp, $fecha_inicio, $fecha_fin,  $modelo, $armadora,
 			$carroceria, $version, $nacimiento, $sexo, $edad, $clavePaquete, $poliza)); */
 	        //convert the XML result into array
 	        $array_data = json_decode(json_encode(simplexml_load_string($this->curl->response)), true);
 
 	        print_r('<pre>');
-	        print_r($array_data);
+	        print_r($modelos);
 	        print_r('</pre>');
 
 		} catch (Exception $e) {
 			dd($e);
 		}
- 		return 'Hola';
+ 		return 'Hola hay cambio';
 
  	}
 
