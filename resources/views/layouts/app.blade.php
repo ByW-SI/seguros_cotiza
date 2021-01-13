@@ -138,6 +138,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" style="color: white;" href="#">Noticias</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" style="color: white;" href="#">Prueba</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="col-sm-1 col-md-1 text-right m-auto p-auto d-flex justify-content-around">
