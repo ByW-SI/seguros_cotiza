@@ -784,7 +784,7 @@
             getDescripcionesGNP(marca,submarca,modelo){
                 let url=`./api/modelos-gnp/${marca}/${submarca}/${modelo}`;
                 axios.get(url).then(res=>{
-                    // console.log('DESCRIPCIONES GNP', res);
+                     console.log('DESCRIPCIONES GNP', res);
                     this.descripciones_gnp = res.data.modelosGNP.ELEMENTOS;
                 }).catch(err=>{
                     console.log(err);
