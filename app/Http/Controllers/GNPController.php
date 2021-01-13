@@ -67,7 +67,7 @@ class GNPController extends Controller
 	        $array_data = json_decode(json_encode(simplexml_load_string($this->curl->response)), true);
 
 	        print_r('<pre>');
-	        print_r($modelos);
+	        print_r(response()->json(['modelosGNP'=>$modelos],201));
 	        print_r('</pre>');
 
 		} catch (Exception $e) {
