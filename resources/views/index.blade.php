@@ -41,10 +41,10 @@
                 </div>
                 
                 
-                {{-- @include('pasos.paso1') --}}
-                {{-- @include('pasos.paso2') --}}
-                {{-- @include('pasos.paso3') --}}
-                {{-- @include('pasos.paso4') --}}
+                @include('pasos.paso1')
+                @include('pasos.paso2')
+                @include('pasos.paso3') 
+                @include('pasos.paso4')
             </div>
         </div>
     </div>
@@ -285,7 +285,7 @@
                         $(from).text("Modelo: "+$("#"+e.target.id).text());
                         $('li.datos-modal#datosm_4').text("Modelo: "+$("#"+e.target.id).text());
                         modelo = $("#"+e.target.id).text();
-                        // console.log(modelo);
+                         console.log(modelo);
                         getDescripcion(marca,modelo);
                         break;
 
