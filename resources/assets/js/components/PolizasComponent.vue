@@ -697,6 +697,7 @@
                 this.alert.class = '';
                 axios.post(url,params).then(res=>{
                     console.log('res:');
+                    console.log('Metodo sendCotizacion');
                     console.log(res);
                     // this.cliente.cotizacion =res.data.cotizacion.cotizacion;
                     // this.cliente.uso_auto =res.data.cotizacion.uso_auto;
