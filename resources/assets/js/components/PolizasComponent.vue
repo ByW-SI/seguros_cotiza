@@ -786,6 +786,7 @@
                 axios.get(url).then(res=>{
                      console.log('DESCRIPCIONES GNP', res);
                     this.descripciones_gnp = res.data.modelosGNP.ELEMENTOS;
+                    console.log("Hola esto es GNP RESULTADO",this.descripciones_gnp);
                 }).catch(err=>{
                      console.log("Error en GNP");
                     console.log(err);
