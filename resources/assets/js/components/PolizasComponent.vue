@@ -35,6 +35,7 @@
                                 <div class="row m-2 no-gutters">
                                     <table class="table table-bordered table-striped table-responsive">
                                         <tbody>
+                                            <span>Prueba de cambio</span>
                                             <!-- HEADERS -->
                                             <tr>
                                                 <th scope="row" class="text-center w-150">
@@ -783,7 +784,7 @@
             },
 
             getDescripcionesGNP(marca,submarca,modelo){
-                let url=`./modelos-gnp/${marca}/${submarca}/${modelo}`;
+                let url=`./api/modelos-gnp/${marca}/${submarca}/${modelo}`;
                 axios.get(url).then(res=>{
                      console.log('DESCRIPCIONES GNP', res);
                     this.descripciones_gnp = res.data.modelosGNP.ELEMENTOS;
