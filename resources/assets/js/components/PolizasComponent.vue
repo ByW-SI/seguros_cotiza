@@ -660,6 +660,7 @@
                     //console.log('descripcion ana',res.data)
                     this.descripciones_ana = res.data.vehiculos;
                     console.log('Get Descripcion ANA');
+                    console.log(res);
                 }).catch(err=>{
                     console.log('err',err)
                 })
@@ -729,7 +730,7 @@
                 let uso = this.cliente.uso_auto
                 let url=`./api/modelos/${uso}/${marca}/${submarca}/${modelo}`;
                 axios.get(url).then(res=>{
-                    // console.log("descripcion qualitas",res.data);
+                     console.log("descripcion qualitas",res.data);
                     this.descripciones_qualitas = res.data.descripciones;
                 }).catch(err=>{
                     console.log(err);
@@ -782,7 +783,7 @@
             },
 
             getDescripcionesGNP(marca,submarca,modelo){
-                let url=`./api/modelos-gnp/${marca}/${submarca}/${modelo}`;
+                let url=`./modelos-gnp/${marca}/${submarca}/${modelo}`;
                 axios.get(url).then(res=>{
                      console.log('DESCRIPCIONES GNP', res);
                     this.descripciones_gnp = res.data.modelosGNP.ELEMENTOS;
