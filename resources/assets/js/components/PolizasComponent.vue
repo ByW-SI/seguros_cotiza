@@ -658,10 +658,10 @@
                 let url = `./api/vehiculoANA/${marca_id}/${submarca_id}/${modelo}`;
 
                 axios.get(url).then(res=>{
-                    //console.log('descripcion ana',res.data)
+                    console.log('descripcion ana',res.data)
                     this.descripciones_ana = res.data.vehiculos;
                     console.log('Get Descripcion ANA');
-                    console.log(res);
+                    console.log('Funciona el controlador ANA EN VUE');
                 }).catch(err=>{
                     console.log('err',err)
                 })
