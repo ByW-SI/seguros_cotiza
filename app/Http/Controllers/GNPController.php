@@ -59,9 +59,10 @@ class GNPController extends Controller
 		 $clavePaquete="PRS0009355"; 
 		 $poliza="Amplia";
 		try {
-			
-			$this->curl->post("https://api.service.gnp.com.mx/autos/wsp/cotizador/cotizar", $this->getXMLCotizacion($cp, $fecha_inicio, $fecha_fin,  $modelo, $armadora,
-			$carroceria, $version, $nacimiento, $sexo, $edad, $clavePaquete, $poliza));
+			$modelos    = $this->getModelos($modelo, $armadora, $carroceria);
+ 		return response()->json(['modelosGNP'=>$modelos],201);
+		/* 	$this->curl->post("https://api.service.gnp.com.mx/autos/wsp/cotizador/cotizar", $this->getXMLCotizacion($cp, $fecha_inicio, $fecha_fin,  $modelo, $armadora,
+			$carroceria, $version, $nacimiento, $sexo, $edad, $clavePaquete, $poliza)); */
 	        //convert the XML result into array
 	        $array_data = json_decode(json_encode(simplexml_load_string($this->curl->response)), true);
 
