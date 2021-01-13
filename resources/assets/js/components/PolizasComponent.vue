@@ -61,7 +61,7 @@
                                                 </th>
                                                 <td class="text-center" v-if="cliente.gnp">
                                                     <select class="form-control" v-model="desc_gnp">
-                                                        <option value="">Seleccionar</option>
+                                                        <option value="">Seleccionar GNP</option>
                                                         <option v-for="descripcion in descripciones_gnp" :value="JSON.stringify(descripcion.ELEMENTO)">{{descripcion.ELEMENTO[4].VALOR}}</option>
                                                     </select>
                                                 </td>
