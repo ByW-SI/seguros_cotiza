@@ -65,9 +65,10 @@ class GNPController extends Controller
 			$carroceria, $version, $nacimiento, $sexo, $edad, $clavePaquete, $poliza)); */
 	        //convert the XML result into array
 	        $array_data = json_decode(json_encode(simplexml_load_string($this->curl->response)), true);
-
+			$prueba =  json(['modelosGNP'=>$modelos],201);
+			
 	        print_r('<pre>');
-	        print_r(response()->json(['modelosGNP'=>$modelos],201));
+	        print_r($prueba.ELEMENTO[4].VALOR);
 	        print_r('</pre>');
 
 		} catch (Exception $e) {
