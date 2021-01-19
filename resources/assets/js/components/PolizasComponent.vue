@@ -699,6 +699,7 @@
                     console.log('res:');
                     console.log('Metodo sendCotizacion');
                     console.log(res);
+                     console.log('ESTA ACTIVO DESCRIPCIONES GS en sencotizacion');
                     // this.cliente.cotizacion =res.data.cotizacion.cotizacion;
                     // this.cliente.uso_auto =res.data.cotizacion.uso_auto;
                     // this.cliente.descripcion_auto = res.data.cotizacion.auto.version;
