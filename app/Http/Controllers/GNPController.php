@@ -21,10 +21,10 @@ class GNPController extends Controller
  	public function __construct(){
 
 		// DATOS GNP
-		$this->user = env('GNP_USER', '');
-		$this->pass = env('GNP_PASSWORD', '');
-		$this->unidadOperable = env('GNP_UNIDAD_OPERABLE', '');
-		$this->intermediario = env('GNP_INTERMEDIARIO', '');
+		$this->user = env('GNP_USER', true);
+		$this->pass = env('GNP_PASSWORD', true);
+		$this->unidadOperable = env('GNP_UNIDAD_OPERABLE', true);
+		$this->intermediario = env('GNP_INTERMEDIARIO', true);
 		try {
 			$this->curl = new Curl();
 			$this->curl->setHeader('Content-Type', 'application/xml');
