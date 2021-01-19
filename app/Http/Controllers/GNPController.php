@@ -102,8 +102,8 @@ class GNPController extends Controller
 	        $array_data = json_decode(json_encode(simplexml_load_string($this->curl->response)), true);
 	        return $array_data;
 		} catch (Exception $e) {
-			/* dd($e); */
-			dd($xmlBody);
+			dd($e);
+			/* dd($xmlBody); */
 
 		}
  	}
