@@ -103,6 +103,8 @@ class GNPController extends Controller
 	        return $array_data;
 		} catch (Exception $e) {
 			dd($e);
+			dd($xmlBody);
+
 		}
  	}
 
