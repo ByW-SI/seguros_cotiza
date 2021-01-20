@@ -194,7 +194,8 @@
 
     </body>
     <!--BOOTSTRAP.JS-->
-        <script src="{{ asset('js/app.js') }}"></script>
+        <!-- <script src="{{ asset('js/app.js') }}"></script> -->
+        <script src="{{asset('js/app.js?v=1.1')}}"></script>
         <script src="{{ asset('js/modernizr-custom.js') }}"></script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
