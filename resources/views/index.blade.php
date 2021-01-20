@@ -53,7 +53,7 @@
 <!--TRANSITIONS-->
     <script>
         $(document).ready(function($) {
-
+              console.log("Hola 56");
             if(!Modernizr.inputtypes.date) {
                 console.log("The 'date' input type is not supported, so using JQueryUI datepicker instead.");
                 $("#p").datepicker();
@@ -240,6 +240,7 @@
             $("#f-correo").val(correo);
             $("#f-celular").val(celular);
             $("#f-cp").val(cp);
+              console.log("Hola 243");
         }   
 
         function eso(){
