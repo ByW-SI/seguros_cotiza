@@ -299,13 +299,13 @@ class GNPController extends Controller
 		 /* dd($this->getCarrocerias($armadora)); */
  		$carroceria = '';
 
- 		if (isset($carrocerias['ELEMENTOS'])) {
+ 		/* if (isset($carrocerias['ELEMENTOS'])) { */
  			foreach ($carrocerias['ELEMENTOS']['ELEMENTO'] as $value) {
  				if (stripos($value['NOMBRE'], $submarca)){
  					$carroceria = $value['CLAVE'];
  				}
  			}
- 		}
+ 		/* } */
 		 dd($carroceria);
  		return $carroceria;
  	}
