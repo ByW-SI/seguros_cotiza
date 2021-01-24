@@ -296,7 +296,7 @@ class GNPController extends Controller
  	public function getCarroceria($armadora, $submarca)
  	{
 		 $carrocerias = $this->getCarrocerias($armadora);
-		 dd($this->getCarrocerias($armadora));
+		 /* dd($this->getCarrocerias($armadora)); */
  		$carroceria = '';
 
  		if (isset($carrocerias['ELEMENTOS'])) {
@@ -306,7 +306,7 @@ class GNPController extends Controller
  				}
  			}
  		}
-
+		 dd($carroceria);
  		return $carroceria;
  	}
 
