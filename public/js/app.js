@@ -2222,7 +2222,7 @@ function Cliente(_ref) {
       this.alert.message = '';
       this.alert.class = '';
       axios.post(url, params).then(function (res) {
-        // console.log("res cot",res);
+         console.log("res cot",res);
         if (res.data.cotizacion) {
           _this.searchOption = true; // this.cliente = new Cliente(res.data.cotizacion);
 
@@ -4306,6 +4306,7 @@ __webpack_require__.r(__webpack_exports__);
   watch: {
     'gnp.cliente.codigo_postal': function gnpClienteCodigo_postal(new_value, old_value) {
       if (new_value.length === 5) this.getDatosDomicilio(new_value);
+
     }
   },
   methods: {
