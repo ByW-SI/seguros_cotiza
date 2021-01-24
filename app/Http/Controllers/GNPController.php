@@ -43,7 +43,7 @@ class GNPController extends Controller
  	 */
  	public function prueba()
  	{
- 		return view('prueba');
+ 		/* return view('prueba'); */
  		/* dd($this->getTiposVia());
 		 dd($this->modelos("Ford", "fiesta", "2015")); */
 		 $cp ="56334" ;
@@ -60,9 +60,9 @@ class GNPController extends Controller
 		 $poliza="Amplia";
 		try {
 			$modelos    = $this->getModelos($modelo, $armadora, $carroceria);
- 		/* return response()->json(['modelosGNP'=>$modelos],201); */
-		/* 	$this->curl->post("https://api.service.gnp.com.mx/autos/wsp/cotizador/cotizar", $this->getXMLCotizacion($cp, $fecha_inicio, $fecha_fin,  $modelo, $armadora,
-			$carroceria, $version, $nacimiento, $sexo, $edad, $clavePaquete, $poliza)); */
+ 		 return response()->json(['modelosGNP'=>$modelos],201); 
+		 	$this->curl->post("https://api.service.gnp.com.mx/autos/wsp/cotizador/cotizar", $this->getXMLCotizacion($cp, $fecha_inicio, $fecha_fin,  $modelo, $armadora,
+			$carroceria, $version, $nacimiento, $sexo, $edad, $clavePaquete, $poliza)); 
 	        //convert the XML result into array
 	        $array_data = json_decode(json_encode(simplexml_load_string($this->curl->response)), true);
 			$prueba =  json_encode($modelos);
@@ -74,7 +74,7 @@ class GNPController extends Controller
 		} catch (Exception $e) {
 			dd($e);
 		}
- 		return 'Hola hay cambio';
+ 		/* return 'Hola hay cambio'; */
 
  	}
 
@@ -89,7 +89,8 @@ class GNPController extends Controller
  	{
  		$armadora   = $this->getArmadora($modelo, $marca);
  		$carroceria = $this->getCarroceria($armadora, $submarca);
- 		$modelos    = $this->getModelos($modelo, $armadora, $carroceria);
+		 $modelos    = $this->getModelos($modelo, $armadora, $carroceria);
+		 dd($modelos);
  		return response()->json(['modelosGNP'=>$modelos],201);
  	}
 
