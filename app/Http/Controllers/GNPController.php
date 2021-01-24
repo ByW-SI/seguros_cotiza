@@ -110,7 +110,7 @@ class GNPController extends Controller
  	{
  		$armadora   = $this->getArmadora($modelo, $marca);
 		 $carroceria = $this->getCarroceria($armadora, $submarca);
-		/*  dd($armadora,$carroceria); */
+		 dd($armadora,$carroceria);
 		 $modelos    = $this->getModelos($modelo, $armadora, $carroceria);
 		 dd($modelos);
  		return response()->json(['modelosGNP'=>$modelos],201);
@@ -268,10 +268,6 @@ class GNPController extends Controller
 					   <ID_UNIDAD_OPERABLE>$this->unidadOperable</ID_UNIDAD_OPERABLE>
 					   <FECHA>$fecha</FECHA> 
 					   <ELEMENTOS>
-					      <ELEMENTO>
-					         <CLAVE>AUT</CLAVE>
-					         <NOMBRE>TIPO_VEHICULO</NOMBRE>
-					      </ELEMENTO>
 					      <ELEMENTO>
 					         <CLAVE>$modelo</CLAVE>
 					         <NOMBRE>MODELO</NOMBRE>
