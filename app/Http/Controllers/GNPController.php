@@ -84,6 +84,23 @@ class GNPController extends Controller
 		 </ELEMENTOS>
 		</SOLICITUD_CATALOGO>
 		";
+		$xml2 ="<SOLICITUD_CATALOGO>
+		<USUARIO>EMOREN927586</USUARIO>
+		 <PASSWORD>Moreno2021</PASSWORD>
+		<TIPO_CATALOGO>ARMADORA_VEHICULO</TIPO_CATALOGO>
+		<ID_UNIDAD_OPERABLE>NOP0000016</ID_UNIDAD_OPERABLE>
+		  <FECHA>24/01/2021</FECHA> 
+		  <ELEMENTOS>
+		  <ELEMENTO>
+			 <CLAVE>AUT</CLAVE>
+			 <NOMBRE>TIPO_VEHICULO</NOMBRE>
+		 </ELEMENTO>
+		 <ELEMENTO>
+		<NOMBRE>ARMADORA</NOMBRE>
+	   <CLAVE>2015</CLAVE> 
+		 </ELEMENTO>
+	   </ELEMENTOS>  
+	   </SOLICITUD_CATALOGO>";
 		/* try {
 			$modelos    = $this->getModelos($modelo, $armadora, $carroceria);
  		 return response()->json(['modelosGNP'=>$modelos],201); 
