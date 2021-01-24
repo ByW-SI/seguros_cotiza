@@ -84,7 +84,7 @@ class GNPController extends Controller
 		 </ELEMENTOS>
 		</SOLICITUD_CATALOGO>
 		";
-		try {
+		/* try {
 			$modelos    = $this->getModelos($modelo, $armadora, $carroceria);
  		 return response()->json(['modelosGNP'=>$modelos],201); 
 		 	$this->curl->post("https://api.service.gnp.com.mx/autos/wsp/cotizador/cotizar", $this->getXMLCotizacion($cp, $fecha_inicio, $fecha_fin,  $modelo, $armadora,
@@ -99,7 +99,7 @@ class GNPController extends Controller
 
 		} catch (Exception $e) {
 			dd($e);
-		}
+		} */
 		try {
 			/* dd($xmlBody); */
 			$this->curl->post("https://api.service.gnp.com.mx/autos/wsp/catalogos/catalogo", $xml);
