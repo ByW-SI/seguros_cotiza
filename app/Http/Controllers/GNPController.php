@@ -122,8 +122,8 @@ class GNPController extends Controller
 			$this->curl->post("https://api.service.gnp.com.mx/autos/wsp/catalogos/catalogo", $xml2);
 	        //convert the XML result into array
 			/* $array_data = json_decode(json_encode(simplexml_load_string($this->curl->response)), true); */
-			var_dump($this->curl->response);
-	        return $array_data;
+			dd($this->curl->response);
+	        /* return $array_data; */
 		} catch (Exception $e) {
 			dd($e);
 			/* dd($xmlBody); */
