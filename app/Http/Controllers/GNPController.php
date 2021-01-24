@@ -58,50 +58,7 @@ class GNPController extends Controller
 		  $edad="22"; 
 		 $clavePaquete="PRS0009355"; 
 		 $poliza="Amplia";
-		 $xml = "<SOLICITUD_CATALOGO>
-		 <USUARIO>$this->user</USUARIO>
-		 <PASSWORD>$this->pass</PASSWORD>
-		 <TIPO_CATALOGO>MODELO_VEHICULO</TIPO_CATALOGO>
-		 <FECHA>04/20/2017</FECHA>
-		 <ID_UNIDAD_OPERABLE>$this->unidadOperable</ID_UNIDAD_OPERABLE>
-		 <ELEMENTOS>
-		   <ELEMENTO>
-			 <CLAVE>GM</CLAVE>
-			 <NOMBRE>ARMADORA</NOMBRE>
-		   </ELEMENTO>
-			  <ELEMENTO>
-			 <CLAVE>AUT</CLAVE>
-			 <NOMBRE>TIPO_VEHICULO</NOMBRE>
-		   </ELEMENTO>
-		   <ELEMENTO>
-			 <CLAVE>43</CLAVE>
-			 <NOMBRE>CARROCERIA</NOMBRE>
-		   </ELEMENTO>
-			<ELEMENTO>
-			 <CLAVE>05</CLAVE>
-			 <NOMBRE>VERSION</NOMBRE>
-		   </ELEMENTO>  
-		 </ELEMENTOS>
-		</SOLICITUD_CATALOGO>
-		";
-		$xml2 ="<SOLICITUD_CATALOGO>
-		<USUARIO>EMOREN927586</USUARIO>
-		 <PASSWORD>Moreno2021</PASSWORD>
-		<TIPO_CATALOGO>ARMADORA_VEHICULO</TIPO_CATALOGO>
-		<ID_UNIDAD_OPERABLE>NOP0000016</ID_UNIDAD_OPERABLE>
-		  <FECHA>24/01/2021</FECHA> 
-		  <ELEMENTOS>
-		  		<ELEMENTO>
-				<CLAVE>AUT</CLAVE>
-			 	<NOMBRE>TIPO_VEHICULO</NOMBRE>
-				 </ELEMENTO>
-				 <ELEMENTO>
-				<NOMBRE>ARMADORA</NOMBRE>
-	  		 	<CLAVE>2015</CLAVE> 
-			 </ELEMENTO>
-	   </ELEMENTOS>  
-	   </SOLICITUD_CATALOGO>";
-		/* try {
+		try {
 			$modelos    = $this->getModelos($modelo, $armadora, $carroceria);
  		 return response()->json(['modelosGNP'=>$modelos],201); 
 		 	$this->curl->post("https://api.service.gnp.com.mx/autos/wsp/cotizador/cotizar", $this->getXMLCotizacion($cp, $fecha_inicio, $fecha_fin,  $modelo, $armadora,
@@ -116,18 +73,6 @@ class GNPController extends Controller
 
 		} catch (Exception $e) {
 			dd($e);
-		} */
-		try {
-			/* dd($xmlBody); */
-			$this->curl->post("https://api.service.gnp.com.mx/autos/wsp/catalogos/catalogo", $xml2);
-	        //convert the XML result into array
-			/* $array_data = json_decode(json_encode(simplexml_load_string($this->curl->response)), true); */
-			dd($this->curl->response);
-	        /* return $array_data; */
-		} catch (Exception $e) {
-			dd($e);
-			/* dd($xmlBody); */
-
 		}
  		/* return 'Hola hay cambio'; */
 
@@ -144,16 +89,16 @@ class GNPController extends Controller
  	{
  		$armadora   = $this->getArmadora($modelo, $marca);
 		 $carroceria = $this->getCarroceria($armadora, $submarca);
-		/*  dd($armadora,$carroceria); */
+		 dd($armadora,$carroceria);
 		 $modelos    = $this->getModelos($modelo, $armadora, $carroceria);
-		/*  dd('Hola a todos'); */
+		 dd($modelos);
  		return response()->json(['modelosGNP'=>$modelos],201);
  	}
 
  	private function buscarEnCatalogo($xmlBody)
  	{
  		try {
-			/* dd($xmlBody); */
+			
 			$this->curl->post("https://api.service.gnp.com.mx/autos/wsp/catalogos/catalogo", $xmlBody);
 	        //convert the XML result into array
 	        $array_data = json_decode(json_encode(simplexml_load_string($this->curl->response)), true);
@@ -275,12 +220,12 @@ class GNPController extends Controller
 					       <NOMBRE>TIPO_VEHICULO</NOMBRE>
 					    </ELEMENTO>
 					   	<ELEMENTO>
-					   		<NOMBRE>ARMADORA</NOMBRE>
+					   		<NOMBRE>MODELO</NOMBRE>
 					   		<CLAVE>$modelo</CLAVE> 
 					   	</ELEMENTO>
 					   </ELEMENTOS>  
 					</SOLICITUD_CATALOGO>";
-
+		dd($xmlBody);
  		return  $this->buscarEnCatalogo($xmlBody);
  		
  	}
@@ -373,7 +318,7 @@ class GNPController extends Controller
 					   	</ELEMENTO>
 					   </ELEMENTOS>  
 					</SOLICITUD_CATALOGO>";
-		/* dd($xmlBody); */
+		dd($xmlBody);
 		return $this->buscarEnCatalogo($xmlBody);
  	}
 
