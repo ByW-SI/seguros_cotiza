@@ -91,17 +91,17 @@ class GNPController extends Controller
 		 $carroceria = $this->getCarroceria($armadora, $submarca);
 		/*  dd($armadora,$carroceria); */
 		 $modelos    = $this->getModelos($modelo, $armadora, $carroceria);
-		 dd('Hola a todos');
+		/*  dd('Hola a todos'); */
  		return response()->json(['modelosGNP'=>$modelos],201);
  	}
 
  	private function buscarEnCatalogo($xmlBody)
  	{
  		try {
-			
-			$hola = $this->curl->post("https://api.service.gnp.com.mx/autos/wsp/catalogos/catalogo", $xmlBody);
+			dd($xmlBody);
+			$this->curl->post("https://api.service.gnp.com.mx/autos/wsp/catalogos/catalogo", $xmlBody);
 	        //convert the XML result into array
-	        $array_data = json_decode(json_encode(simplexml_load_string($this->curl->response("https://api.service.gnp.com.mx/autos/wsp/catalogos/catalogo", $xmlBody))), true);
+	        $array_data = json_decode(json_encode(simplexml_load_string($this->curl->response)), true);
 	        return $array_data;
 		} catch (Exception $e) {
 			dd($e);
