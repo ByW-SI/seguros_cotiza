@@ -91,14 +91,14 @@ class GNPController extends Controller
 		<ID_UNIDAD_OPERABLE>NOP0000016</ID_UNIDAD_OPERABLE>
 		  <FECHA>24/01/2021</FECHA> 
 		  <ELEMENTOS>
-		  <ELEMENTO>
-			 <CLAVE>AUT</CLAVE>
-			 <NOMBRE>TIPO_VEHICULO</NOMBRE>
-		 </ELEMENTO>
-		 <ELEMENTO>
-		<NOMBRE>ARMADORA</NOMBRE>
-	   <CLAVE>2015</CLAVE> 
-		 </ELEMENTO>
+		  		<ELEMENTO>
+				<CLAVE>AUT</CLAVE>
+			 	<NOMBRE>TIPO_VEHICULO</NOMBRE>
+				 </ELEMENTO>
+				 <ELEMENTO>
+				<NOMBRE>ARMADORA</NOMBRE>
+	  		 	<CLAVE>2015</CLAVE> 
+			 </ELEMENTO>
 	   </ELEMENTOS>  
 	   </SOLICITUD_CATALOGO>";
 		/* try {
@@ -121,7 +121,8 @@ class GNPController extends Controller
 			/* dd($xmlBody); */
 			$this->curl->post("https://api.service.gnp.com.mx/autos/wsp/catalogos/catalogo", $xml2);
 	        //convert the XML result into array
-	        $array_data = json_decode(json_encode(simplexml_load_string($this->curl->response)), true);
+			/* $array_data = json_decode(json_encode(simplexml_load_string($this->curl->response)), true); */
+			var_dump($this->curl->response);
 	        return $array_data;
 		} catch (Exception $e) {
 			dd($e);
