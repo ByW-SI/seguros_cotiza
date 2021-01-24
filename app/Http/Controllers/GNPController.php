@@ -60,12 +60,33 @@ class GNPController extends Controller
 		 $poliza="Amplia";
 		try {
 			$modelos    = $this->getModelos($modelo, $armadora, $carroceria);
- 		 return response()->json(['modelosGNP'=>$modelos],201); 
+ 		/*  return response()->json(['modelosGNP'=>$modelos],201); 
 		 	$this->curl->post("https://api.service.gnp.com.mx/autos/wsp/cotizador/cotizar", $this->getXMLCotizacion($cp, $fecha_inicio, $fecha_fin,  $modelo, $armadora,
 			$carroceria, $version, $nacimiento, $sexo, $edad, $clavePaquete, $poliza)); 
 	        //convert the XML result into array
 	        $array_data = json_decode(json_encode(simplexml_load_string($this->curl->response)), true);
-			$prueba =  json_encode($modelos);
+			$prueba =  json_encode($modelos); */
+			$xml="  <SOLICITUD_CATALOGO>
+			<USUARIO>EMOREN927586</USUARIO>
+			<PASSWORD>Moreno2021</PASSWORD>
+		   <TIPO_CATALOGO>ARMADORA_VEHICULO</TIPO_CATALOGO>
+		   <ID_UNIDAD_OPERABLE>NOP0000016</ID_UNIDAD_OPERABLE>
+			<FECHA>24/01/2021</FECHA> 
+		   <ELEMENTOS>
+		   <ELEMENTO>
+			  <CLAVE>AUT</CLAVE>
+			<NOMBRE>TIPO_VEHICULO</NOMBRE>
+		  </ELEMENTO>
+		   <ELEMENTO>
+		 <NOMBRE>MODELO</NOMBRE>
+		 <CLAVE>2015</CLAVE> 
+		 </ELEMENTO>
+		 </ELEMENTOS>  
+		 </SOLICITUD_CATALOGO>";
+			$this->curl->post("https://api.service.gnp.com.mx/autos/wsp/catalogos/catalogo", $xml);
+	        //convert the XML result into array
+	        $array_data = json_decode(json_encode(simplexml_load_string($this->curl->response)), true);
+	        return $array_data;
 			
 	        print_r('<pre>');
 	        print_r($prueba);
