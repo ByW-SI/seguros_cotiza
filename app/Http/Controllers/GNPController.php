@@ -91,7 +91,7 @@ class GNPController extends Controller
 		 $carroceria = $this->getCarroceria($armadora, $submarca);
 		/*  dd($armadora,$carroceria); */
 		 $modelos    = $this->getModelos($modelo, $armadora, $carroceria);
-		/*  dd($modelos); */
+		 dd($modelos);
  		return response()->json(['modelosGNP'=>$modelos],201);
  	}
 
