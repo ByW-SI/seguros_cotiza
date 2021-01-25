@@ -306,7 +306,7 @@ class GNPController extends Controller
  				}
  			}
  		/* } */
-		 dd($carrocerias);
+		 dd($carrocerias,$submarca);
  		return $carroceria;
  	}
 
