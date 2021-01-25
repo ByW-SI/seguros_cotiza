@@ -297,17 +297,21 @@ class GNPController extends Controller
  	{
 		 $carrocerias = $this->getCarrocerias($armadora);
 		 /* dd($this->getCarrocerias($armadora)); */
- 		$carroceria = '';
+		 $carroceria = '';
+		 $aux="";
 
  		/* if (isset($carrocerias['ELEMENTOS'])) { */
  			foreach ($carrocerias['ELEMENTOS']['ELEMENTO'] as $value) {
- 				if (stripos($value['NOMBRE'], $submarca)){
+ 				if ($value['NOMBRE'] == $submarca){
 					 $carroceria = $value['CLAVE'];
 					 dd("Si se encontro");
- 				}
+				 }
+				 if (strcmp($value['NOMBRE'], $submarca) === 0){
+					$aux= $value['CLAVE'];
+				}
  			}
  		/* } */
-		 dd($carroceria,$submarca);
+		 dd($carroceria,$submarca,$aux);
  		return $carroceria;
  	}
 
