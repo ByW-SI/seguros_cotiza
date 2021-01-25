@@ -588,7 +588,7 @@ class GNPController extends Controller
  				$primaTotal = $array_data["PAQUETES"]["PAQUETE"]["TOTALES"]["TOTAL_PRIMA"][2]["CONCEPTO_ECONOMICO"][9]["MONTO"];
  				break;
  		}
-
+		 dd($primaTotal);
  		return  "<EMISION>
 				  <SOLICITUD>
 				    <USUARIO>$this->user</USUARIO>
@@ -704,7 +704,7 @@ class GNPController extends Controller
 				    <PRIMA_NETA>$primaNeta</PRIMA_NETA>
 				  </IMPORTES>
 				</EMISION>";
-				dd($primaTotal);
+			
  	}
 
  	/**
