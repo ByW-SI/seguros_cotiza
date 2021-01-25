@@ -575,20 +575,20 @@ class GNPController extends Controller
  			case 'A':
  				$primaNeta  = $array_data["PAQUETES"]["PAQUETE"]["TOTALES"]["TOTAL_PRIMA"][0]["CONCEPTO_ECONOMICO"][1]["MONTO"];
  				$importeIVA = $array_data["PAQUETES"]["PAQUETE"]["TOTALES"]["TOTAL_PRIMA"][0]["CONCEPTO_ECONOMICO"][7]["MONTO"];
- 				$primaTotal = $array_data["PAQUETES"]["PAQUETE"]["TOTALES"]["TOTAL_PRIMA"][0]["CONCEPTO_ECONOMICO"][9]["MONTO"];
+ 				$primaTotal = $array_data["PAQUETES"]["PAQUETE"]["TOTALES"]["TOTAL_PRIMA"][0]["CONCEPTO_ECONOMICO"][10]["MONTO"];
  				break;
  			case 'S':
  				$primaNeta  = $array_data["PAQUETES"]["PAQUETE"]["TOTALES"]["TOTAL_PRIMA"][1]["CONCEPTO_ECONOMICO"][1]["MONTO"];
  				$importeIVA = $array_data["PAQUETES"]["PAQUETE"]["TOTALES"]["TOTAL_PRIMA"][1]["CONCEPTO_ECONOMICO"][7]["MONTO"];
- 				$primaTotal = $array_data["PAQUETES"]["PAQUETE"]["TOTALES"]["TOTAL_PRIMA"][1]["CONCEPTO_ECONOMICO"][9]["MONTO"];
+ 				$primaTotal = $array_data["PAQUETES"]["PAQUETE"]["TOTALES"]["TOTAL_PRIMA"][1]["CONCEPTO_ECONOMICO"][10]["MONTO"];
  				break;
  			case 'T':
  				$primaNeta  = $array_data["PAQUETES"]["PAQUETE"]["TOTALES"]["TOTAL_PRIMA"][2]["CONCEPTO_ECONOMICO"][1]["MONTO"];
  				$importeIVA = $array_data["PAQUETES"]["PAQUETE"]["TOTALES"]["TOTAL_PRIMA"][2]["CONCEPTO_ECONOMICO"][7]["MONTO"];
- 				$primaTotal = $array_data["PAQUETES"]["PAQUETE"]["TOTALES"]["TOTAL_PRIMA"][2]["CONCEPTO_ECONOMICO"][9]["MONTO"];
+ 				$primaTotal = $array_data["PAQUETES"]["PAQUETE"]["TOTALES"]["TOTAL_PRIMA"][2]["CONCEPTO_ECONOMICO"][10]["MONTO"];
  				break;
  		}
-		 dd($array_data);
+/* 		 dd($array_data); */
  		return  "<EMISION>
 				  <SOLICITUD>
 				    <USUARIO>$this->user</USUARIO>
