@@ -308,10 +308,11 @@ class GNPController extends Controller
 				 }
 				 if (strcmp($value['NOMBRE'], $submarca) === 0){
 					$aux= $value['CLAVE'];
+					$carroceria =$aux;
 				}
  			}
  		/* } */
-		 dd($carroceria,$submarca,$aux);
+		/*  dd($carroceria,$submarca,$aux); */
  		return $carroceria;
  	}
 
