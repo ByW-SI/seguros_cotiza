@@ -588,7 +588,7 @@ class GNPController extends Controller
  				$primaTotal = $array_data["PAQUETES"]["PAQUETE"]["TOTALES"]["TOTAL_PRIMA"][2]["CONCEPTO_ECONOMICO"][9]["MONTO"];
  				break;
  		}
-		 dd($primaTotal,$primaNeta,$importeIVA);
+		 dd($array_data);
  		return  "<EMISION>
 				  <SOLICITUD>
 				    <USUARIO>$this->user</USUARIO>
