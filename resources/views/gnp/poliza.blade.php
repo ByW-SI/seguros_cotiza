@@ -28,7 +28,7 @@
 					<div class="col-6">
 						<h4>Su poliza se guardo con la siguiente información:</h4>
 					</div>
-					{{var_dump($array_data)}}
+					{{var_dump($response)}}
 					<div class="col-6">
 						<label class="control-label">Número de poliza:</label>
 						@if( isset($response['SOLICITUD']) )
