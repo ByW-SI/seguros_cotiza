@@ -5056,6 +5056,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     getDescripcionesANA: function getDescripcionesANA(marca_id, submarca_id, modelo) {
       var _this = this;
+      console.log('Cambio en la linea 5059');
 
       var url = "./api/vehiculoANA/".concat(marca_id, "/").concat(submarca_id, "/").concat(modelo);
       axios.get(url).then(function (res) {
