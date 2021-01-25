@@ -375,14 +375,14 @@ class GNPController extends Controller
  		$version 	  = !is_null($vehiculo) ? $vehiculo[4]->CLAVE : null;
 
  		$paquetesPersonaFisica = [
- 			'Amplia'   => 'PRP0000287',
- 			'Limitada' => 'PRP0000288',
+ 			'Amplia'   => 'PRS0009355',
+ 			'Limitada' => 'PRS0009356',
  			'RC' 	   => 'PRP0000289'
  		];
 
  		$paquetesPersonaMoral = [
  			'Amplia'   => 'PRP0000347',
- 			'Limitada' => 'PRP0000348',
+ 			'Limitada' => 'PRS0009361',
  			'RC' 	   => 'PRP0000349'
  		];
  		$clavePaquete = $cliente->uso_auto === "Servicio Particular"
