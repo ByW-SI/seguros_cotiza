@@ -302,11 +302,12 @@ class GNPController extends Controller
  		/* if (isset($carrocerias['ELEMENTOS'])) { */
  			foreach ($carrocerias['ELEMENTOS']['ELEMENTO'] as $value) {
  				if (stripos($value['NOMBRE'], $submarca)){
- 					$carroceria = $value['CLAVE'];
+					 $carroceria = $value['CLAVE'];
+					 dd("Si se encontro");
  				}
  			}
  		/* } */
-		 dd($carrocerias,$submarca);
+		 dd($carroceria,$submarca);
  		return $carroceria;
  	}
 
