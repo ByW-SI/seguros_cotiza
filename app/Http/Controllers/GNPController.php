@@ -724,7 +724,7 @@ class GNPController extends Controller
 	        //convert the XML result into array
 			$array_data = json_decode(json_encode(simplexml_load_string($this->curl->response)), true);
 			dd($array_data);
-	        return view('gnp.poliza',['response'=>$array_data]);
+	        /* return view('gnp.poliza',['response'=>$array_data]); */
 	        // return response()->json(['cotizacionGNP'=>$array_data],201);
 		} catch (Exception $e) {
 			return response()->json(['error'=>"Fallo la petición"],400);
