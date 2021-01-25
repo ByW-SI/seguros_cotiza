@@ -570,7 +570,7 @@ class GNPController extends Controller
 		}
 
 		$num_cotizacion = $array_data["SOLICITUD"]["NUM_COTIZACION"];
-		dd($datos->periodicidad);
+		
  		switch ($datos->periodicidad) {
  			case 'A':
  				$primaNeta  = $array_data["PAQUETES"]["PAQUETE"]["TOTALES"]["TOTAL_PRIMA"][0]["CONCEPTO_ECONOMICO"][1]["MONTO"];
@@ -704,6 +704,7 @@ class GNPController extends Controller
 				    <PRIMA_NETA>$primaNeta</PRIMA_NETA>
 				  </IMPORTES>
 				</EMISION>";
+				dd($primaTotal);
  	}
 
  	/**
